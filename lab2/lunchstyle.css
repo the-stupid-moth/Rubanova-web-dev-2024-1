@@ -1,156 +1,147 @@
-
+/*сетка*/
 section > div {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/*карточка блюда*/
+section > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 30px 40px;
+  border-radius: 35px;
+  background-color: white;
+  filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+  cursor: pointer;
+  transition: border 0.3s;
+
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*подсветка при наведении*/
+section > div > div:hover {
+  border: 2px solid tomato;
+}
+
+section > div > div:hover button {
+  background-color: rgb(190, 190, 190);
+  color: black;
+}
+
+/*изображения*/
+.foods {
+  height: 250px;
+  overflow: hidden;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foods img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  border-radius: 35px;
+  display: block;
+}
+
+/*цена*/
+section > div > div > p:nth-of-type(1) {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*название блюда*/
+section > div > div > p:nth-of-type(2) {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/*вес/объём*/
+section > div > div > p:nth-of-type(3) {
+  color: gray;
+  margin-top: auto;
+}
+
+/*кнопка добавить*/
+section > div > div > button {
+  background-color: #f1eee9;
+  padding: 10px 30px;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  align-self: center;
+}
+
+/*навигация*/
+nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+nav a.active {
+  color: tomato;
+}
+
+
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+
+/*заголовки*/
+section > h2 {
+  margin: 30px;
+}
+
+.soops h2 {
+  margin-top: unset;
+}
+
+/*адаптив*/
+@media (max-width: 800px) {
+  section > div {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* Блок одного блюда */
-  section > div > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  
-    padding: 30px 40px;
-    border-radius: 35px;
-    background-color: white;
-    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
-    cursor: pointer;
-  
-    transition: border 0.3s;
+
+  h1, h2 {
+    text-align: center;
   }
-  
-  /* Наведение на блок */
-  section > div > div:hover {
-    border: 2px solid tomato;
+}
+
+@media (max-width: 600px) {
+  section > div {
+    grid-template-columns: 1fr;
   }
-  
-  /* Кнопка внутри блока при наведении на блок */
-  section > div > div:hover button {
-    background-color:rgb(190, 190, 190);
-    color: black;
-  }
-  
-  /* Контейнер с изображением*/
-  .food {
-    height: 250px;
-    overflow: hidden;
-    border-radius: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Изображение блюда */
-  .food img {
-    height: 100%;
-    width: auto;
-    object-fit: cover;
-    border-radius: 35px;
-    display: block;
-  }
-  
-  /* Цена */
-  section > div > div > p:nth-of-type(1) {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  /* Название */
-  section > div > div > p:nth-of-type(2) {
-    font-size: 18px;
-    font-weight: 500;
-  }
-  
-  /* Вес/объём */
-  section > div > div > p:nth-of-type(3) {
-    color: gray;
-    margin-top: auto;
-  }
-  
-  /* Кнопка */
-  section > div > div > button {
-    background-color: #f1eee9;
-    padding: 10px 30px;
-    border-radius: 10px;
-    margin-top: 10px;
-    border: none;
-    cursor: pointer;
-    align-self: center;
-  }
-  
-  /* Навигация */
+
   nav {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-  }
-  
-  /* Активная ссылка */
-  nav a.active {
-    color: tomato;
-  }
-  
-  /* Футер */
-  html, body {
-    height: 100%;
-  }
-  
-  body {
-    display: flex;
     flex-direction: column;
+    align-items: center;
   }
-  
-  main {
-    flex: 1;
-  }
-  
-  footer {
-    background-color: black;
-    color: white;
-    padding: 20px;
-  }
-  section > h2{
-    margin: 30px;
-  }
-  .soops h2{
-    margin-top: unset;
 
+  nav a {
+    font-size: 22px;
   }
-  /* Адаптивность */
-  @media (max-width: 800px) {
-    section > div {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    h1, h2 {
-      text-align: center;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    section > div {
-      grid-template-columns: 1fr;
-    }
-    nav {
-      flex-direction: column;
-      align-items: center;
-    }
-    nav a {
-      font-size: 22px;
-    }
-  }
-  
-  /*
-  section > div{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-  section>div>div{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-  }*/
-
- 
+}
