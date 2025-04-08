@@ -1,29 +1,39 @@
-/*сетка*/
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Noto Sans", sans-serif;
+}
+
+main {
+  flex: 1;
+}
+
 section > div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 
-/*карточка блюда*/
 section > div > div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   padding: 30px 40px;
   border-radius: 35px;
   background-color: white;
   filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
   cursor: pointer;
   transition: border 0.3s;
-
   max-width: 350px;
   width: 100%;
   margin: 0 auto;
 }
 
-/*подсветка при наведении*/
 section > div > div:hover {
   border: 2px solid tomato;
 }
@@ -33,7 +43,6 @@ section > div > div:hover button {
   color: black;
 }
 
-/*изображения*/
 .foods {
   height: 250px;
   overflow: hidden;
@@ -51,25 +60,21 @@ section > div > div:hover button {
   display: block;
 }
 
-/*цена*/
 section > div > div > p:nth-of-type(1) {
   font-size: 20px;
   font-weight: bold;
 }
 
-/*название блюда*/
 section > div > div > p:nth-of-type(2) {
   font-size: 18px;
   font-weight: 500;
 }
 
-/*вес/объём*/
 section > div > div > p:nth-of-type(3) {
   color: gray;
   margin-top: auto;
 }
 
-/*кнопка добавить*/
 section > div > div > button {
   background-color: #f1eee9;
   padding: 10px 30px;
@@ -80,7 +85,6 @@ section > div > div > button {
   align-self: center;
 }
 
-/*навигация*/
 nav {
   display: flex;
   gap: 15px;
@@ -91,27 +95,6 @@ nav a.active {
   color: tomato;
 }
 
-
-body {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
-}
-
-footer {
-  background-color: black;
-  color: white;
-  padding: 20px;
-}
-
-/*заголовки*/
 section > h2 {
   margin: 30px;
 }
@@ -120,7 +103,14 @@ section > h2 {
   margin-top: unset;
 }
 
-/*адаптив*/
+footer {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: left;
+  width: 100%;
+}
+
 @media (max-width: 800px) {
   section > div {
     grid-template-columns: repeat(2, 1fr);
